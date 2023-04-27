@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<configuration>
+  <!-- Set the memory and JVM options for map and reduce tasks -->
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1536</value>
+  </property>
+  <property>
+    <name>mapreduce.map.java.opts</name>
+    <value>-Xmx1024M</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>3072</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>-Xmx2560M</value>
+  </property>
+
+  <!-- Set the maximum number of attempts for failed tasks -->
+  <property>
+    <name>mapreduce.task.maxattempts</name>
+    <value>4</value>
+  </property>
+
+  <!-- Set the compression type and codec for map output -->
+  <property>
+    <name>mapreduce.map.output.compress</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>mapreduce.map.output.compress.type</name>
+    <value>BLOCK</value>
+  </property>
+  <property>
+    <name>mapreduce.map.output.compress.codec</name>
+    <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+
+  <!-- Set the input and output formats for map and reduce tasks -->
+  <property>
+    <name>mapreduce.inputformat.class</name>
+    <value>org.apache.hadoop.mapreduce.lib.input.TextInputFormat</value>
+  </property>
+  <property>
+    <name>mapreduce.outputformat.class</name>
+    <value>org.apache.hadoop.mapreduce.lib.output.TextOutputFormat</value>
+  </property>
+
+  <!-- Set the input and output paths for the job -->
+  <property>
+    <name>mapreduce.input.fileinputformat.inputdir</name>
+    <value>/path/to/input/files</value>
+  </property>
+  <property>
+    <name>mapreduce.output.fileoutputformat.outputdir</name>
+    <value>/path/to/output/files</value>
+  </property>
+</configuration>
